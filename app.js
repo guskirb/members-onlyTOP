@@ -1,16 +1,18 @@
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
+
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
 const session = require('express-session');
 const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
 
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config();
-}
+const initializePassport = require('./config/passport');
+initializePassport(passport);
 
 mongoose.set('strictQuery', false);
 

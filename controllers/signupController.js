@@ -22,11 +22,11 @@ exports.signup_post = [
     body('email')
         .trim()
         .isEmail()
-        .withMessage('Not a valid e-mail address')
+        .withMessage('Not a valid email address')
         .custom(async value => {
             const user = await User.findOne({ email: value }).exec();
             if (user) {
-                throw new Error('E-mail already in use');
+                throw new Error('Email already in use');
             }
         }),
     body('password')
@@ -54,7 +54,6 @@ exports.signup_post = [
                 password: hashedPass,
                 admin: false,
             });
-            console.log(user);
         } catch (err) {
 
         }
