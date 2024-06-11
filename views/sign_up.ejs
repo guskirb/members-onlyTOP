@@ -14,11 +14,22 @@
         <div class="container">
             <h1>Sign Up</h1>
             <form action="" method="POST">
-                <label for="username">Username</label>
-                <input name="username" placeholder="username" type="text" />
-                <label for="password">Password</label>
-                <input name="password" type="password" />
+                <div class="coupled">
+                    <label for="first_name">First Name
+                        <input name="first_name"  type="text" />
+                    </label>
+                    <label for="last_name">Last Name
+                        <input name="last_name" type="text" />
+                    </label>
+                </div>
+                <label for="email">Email
+                    <input name="email" type="email" />
+                </label>
+                <label for="password">Password
+                    <input name="password" type="password" />
+                </label>
                 <button>Sign Up</button>
+                <p>Already have an account? <a href="/login">Log In</a></p>
             </form>
         </div>
 </body>

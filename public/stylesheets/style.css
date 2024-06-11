@@ -2,12 +2,13 @@ body {
   display: flex;
   flex-flow: column;
   align-items: center;
+  height: 100vh;
   margin: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
-  color: #00B7FF;
+  color: #00b7ff;
 }
 
 .navContainer {
@@ -17,18 +18,69 @@ a {
 }
 
 .navBar {
-  width: 60vw;
+  width: 1200px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .homeButton {
   margin-right: auto;
 }
 
-.container{
+.container {
   display: flex;
   flex-flow: column;
   align-items: center;
   width: 60vw;
+}
+
+.coupled {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+label {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+}
+
+form {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 5px;
+  width: 400px;
+}
+
+form button {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.logInButton {
+  background: url(../images/login.svg) no-repeat center center/cover;
+  content: "";
+  height: 30px;
+  width:30px;
+}
+
+.signUpButton {
+  background: url(../images/signup.svg) no-repeat center center/cover;
+  content: "";
+  height: 30px;
+  width:30px;
+}
+
+.userButton {
+  display: flex;
+  gap: 10px;
+}
+
+.userButton > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
