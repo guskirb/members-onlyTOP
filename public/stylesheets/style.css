@@ -1,8 +1,34 @@
 body {
-  padding: 50px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+.navContainer {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.navBar {
+  width: 60vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.homeButton {
+  margin-right: auto;
+}
+
+.container{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 60vw;
 }
