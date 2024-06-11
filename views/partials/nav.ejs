@@ -3,19 +3,29 @@
         <a href="/"><button class="homeButton">Home</button></a>
         <div class="userButton">
             <% if(locals.currentUser){ %>
-                <h3> Welcome <%= locals.currentUser.first_name %>
+                <h3>
+                     Welcome <%= locals.currentUser.first_name %>
                 </h3>
+                <% if(locals.currentUser.admin){ %>
+                    <a href="/admin">
+                        <div class="adminTrue imgButton"></div>
+                    </a>
+                <% } else {%>
+                    <a href="/admin">
+                        <div class="adminFalse imgButton"></div>
+                    </a>
+                <% }%>
                 <a href="/logout">
-                    <div class="logButton"></div>
+                    <div class="logOutButton imgButton"></div>
                     <button>Log Out</button>
                 </a>
                 <% } else { %>
                     <a href="/signup">
-                        <div class="signUpButton"></div>
+                        <div class="signUpButton imgButton"></div>
                         <button>Sign Up</button>
                     </a>
                     <a href="/login">
-                        <div class="logButton"></div>
+                        <div class="logInButton imgButton"></div>
                         <button>Log In</button>
                     </a>
                     <% }%>

@@ -66,23 +66,39 @@ form button {
   width: 100%;
 }
 
-.logButton {
+.logInButton {
   background: url(../images/login.svg) no-repeat center center/cover;
   content: "";
-  height: 30px;
-  width: 30px;
+}
+
+.logOutButton {
+  background: url(../images/signout.svg) no-repeat center center/cover;
+  content: "";
 }
 
 .signUpButton {
   background: url(../images/signup.svg) no-repeat center center/cover;
   content: "";
+}
+
+.adminTrue {
+  background: url(../images/adminTrue.svg) no-repeat center center/cover;
+  content: "";
+}
+
+.adminFalse {
+  background: url(../images/adminFalse.svg) no-repeat center center/cover;
+  content: "";
+}
+
+.imgButton {
   height: 30px;
   width: 30px;
 }
 
 .userButton {
   display: flex;
-  gap: 10px;
+  gap: 5px;
   align-items: center;
 }
 

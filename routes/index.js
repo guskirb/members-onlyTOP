@@ -3,6 +3,7 @@ const router = express.Router();
 const passport = require('passport');
 const signupController = require('../controllers/signupController');
 const loginController = require('../controllers/loginController');
+const authMiddleware = require('../authMiddleware');
 
 /* GET home page. */
 router.get('/', (req, res, next) => {
@@ -12,7 +13,7 @@ router.get('/', (req, res, next) => {
   });
 });
 
-router.get('/signup', signupController.signup_get);
+router.get('/signup', authMiddleware.isLoggedIn, signupController.signup_get);
 
 router.post('/signup', signupController.signup_post);
 
