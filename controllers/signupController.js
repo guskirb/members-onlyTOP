@@ -22,7 +22,7 @@ exports.signup_post = [
     body('email')
         .trim()
         .isEmail()
-        .withMessage('Not a valid email address')
+        .withMessage('Enter an email address')
         .custom(async value => {
             const user = await User.findOne({ email: value }).exec();
             if (user) {
@@ -37,12 +37,13 @@ exports.signup_post = [
     }).withMessage('Passwords do not match'),
     asyncHandler(async (req, res, next) => {
         const errors = validationResult(req);
-
+        
         if (!errors.isEmpty()) {
             res.render('sign_up', {
                 title: 'Sign Up',
                 errors: errors.array(),
             });
+            return;
         }
 
         try {
@@ -54,8 +55,10 @@ exports.signup_post = [
                 password: hashedPass,
                 admin: false,
             });
+            const result = await user.save();
+            res.redirect('/login');
         } catch (err) {
-
+            return next(err);
         }
     }),
 ];

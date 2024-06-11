@@ -66,7 +66,7 @@ form button {
   width: 100%;
 }
 
-.logInButton {
+.logButton {
   background: url(../images/login.svg) no-repeat center center/cover;
   content: "";
   height: 30px;

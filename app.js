@@ -11,6 +11,7 @@ const flash = require('express-flash');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
+const MongoStore = require('connect-mongo');
 
 const initializePassport = require('./config/passport');
 initializePassport(passport);
@@ -37,7 +38,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(flash());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(session({ secret: 'cats', resave: false, saveUninitialized: true }));
+app.use(session({
+  secret: 'cats',
+  resave: false,
+  saveUninitialized: true,
+  store: MongoStore.create({
+    mongoUrl: process.env.mongoDB
+  })
+}));
 app.use(passport.session());
 app.use(express.urlencoded({ extended: false }));
 app.use((req, res, next) => {

@@ -2,14 +2,23 @@
     <div class="navBar">
         <a href="/"><button class="homeButton">Home</button></a>
         <div class="userButton">
-            <a href="/signup">
-                <div class="signUpButton"></div>
-                <button>Sign Up</button>
-            </a>
-            <a href="/login">
-                <div class="logInButton"></div>
-                <button>Log In</button>
-            </a>
+            <% if(locals.currentUser){ %>
+                <h3> Welcome <%= locals.currentUser.first_name %>
+                </h3>
+                <a href="/logout">
+                    <div class="logButton"></div>
+                    <button>Log Out</button>
+                </a>
+                <% } else { %>
+                    <a href="/signup">
+                        <div class="signUpButton"></div>
+                        <button>Sign Up</button>
+                    </a>
+                    <a href="/login">
+                        <div class="logButton"></div>
+                        <button>Log In</button>
+                    </a>
+                    <% }%>
         </div>
     </div>
 </div>
