@@ -1,18 +1,17 @@
 const express = require('express');
 const router = express.Router();
+const signupController = require('../controllers/signupController');
+const loginController = require('../controllers/loginController');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', (req, res, next) => {
   res.render('index', { title: 'Members Only' });
 });
 
-router.get('/signup', function(req, res, next) {
-  res.render('sign_up', { title: 'Sign Up' });
-});
+router.get('/signup', signupController.signup_get);
 
+router.post('/signup', signupController.signup_post);
 
-router.get('/login', function(req, res, next) {
-  res.render('log_in', { title: 'Log In' });
-});
+router.get('/login', loginController.login_get);
 
 module.exports = router;
