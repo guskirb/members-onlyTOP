@@ -6,7 +6,9 @@ const loginController = require('../controllers/loginController');
 
 /* GET home page. */
 router.get('/', (req, res, next) => {
-  res.render('index', { title: 'Members Only' });
+  res.render('index', {
+    title: 'Members Only',
+  });
 });
 
 router.get('/signup', signupController.signup_get);
@@ -17,8 +19,8 @@ router.get('/login', loginController.login_get);
 
 router.post('/login', passport.authenticate('local', {
   successRedirect: "/",
-  failureRedirect: "/login"
-}),
-  loginController.login_post);
+  failureRedirect: "/login",
+  failureFlash: true
+}));
 
 module.exports = router;

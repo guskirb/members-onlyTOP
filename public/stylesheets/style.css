@@ -11,6 +11,12 @@ a {
   color: #00b7ff;
 }
 
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
 .navContainer {
   width: 100vw;
   display: flex;
@@ -64,19 +70,20 @@ form button {
   background: url(../images/login.svg) no-repeat center center/cover;
   content: "";
   height: 30px;
-  width:30px;
+  width: 30px;
 }
 
 .signUpButton {
   background: url(../images/signup.svg) no-repeat center center/cover;
   content: "";
   height: 30px;
-  width:30px;
+  width: 30px;
 }
 
 .userButton {
   display: flex;
   gap: 10px;
+  align-items: center;
 }
 
 .userButton > a {
