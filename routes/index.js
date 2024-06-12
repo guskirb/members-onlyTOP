@@ -12,7 +12,6 @@ const User = require('../models/user');
 
 /* GET home page. */
 router.get('/', (req, res, next) => {
-
   res.render('index', {
     title: 'Members Only',
   });
@@ -22,12 +21,11 @@ router.get('/signup', authMiddleware.isLoggedIn, signupController.signup_get);
 
 router.post('/signup', signupController.signup_post);
 
-router.get('/login', loginController.login_get);
+router.get('/login', authMiddleware.isLoggedIn, loginController.login_get);
 
-router.post('/login', passport.authenticate('local', {
+router.post('/login', loginController.validateLogin, passport.authenticate('local', {
   successRedirect: "/",
   failureRedirect: "/login",
-  failureFlash: true
 }));
 
 router.get('/logout', (req, res, next) => {

@@ -7,7 +7,6 @@ const express = require('express');
 const path = require('path');
 const session = require('express-session');
 const passport = require('passport');
-const flash = require('express-flash');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
@@ -36,7 +35,6 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(flash());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
   secret: 'cats',

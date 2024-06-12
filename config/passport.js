@@ -11,12 +11,12 @@ const verify = async (username, password, done) => {
     try {
         const user = await User.findOne({ email: username });
         if (!user) {
-            return done(null, false, { message: 'No user with that email' });
+            return done(null, false, {});
         };
 
         const match = await bcrypt.compare(password, user.password);
         if (!match) {
-            return done(null, false, { message: 'Incorrect password' });
+            return done(null, false, {});
         };
 
         return done(null, user);
