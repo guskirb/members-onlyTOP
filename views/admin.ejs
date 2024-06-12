@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        <%= title %>
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+        <div class="container">
+            <h1>Enter the password</h1>
+            <form action="" method="POST">
+                <label for="password">Password
+                    <input name="password" type="password" />
+                </label>
+                <button>Enter</button>
+            </form>
+            <% if(error){ %>
+                    <h3> <%= error %> </h3>
+              <% } %>
+        </div>
+</body>
+
+</html>
