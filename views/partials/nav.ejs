@@ -1,32 +1,34 @@
 <div class="navContainer">
     <div class="navBar">
-        <a href="/"><h1 class="homeButton">MembersOnly</h1></a>
+        <a href="/" class="button"><h1 class="homeButton">MembersOnly</h1></a>
         <div class="userButton">
             <% if(locals.currentUser){ %>
                 <h3>
                      Welcome <%= locals.currentUser.first_name %>
                 </h3>
                 <% if(locals.currentUser.admin){ %>
-                    <a href="/admin">
+                    <a href="/admin" class="button">
                         <div class="adminTrue imgButton"></div>
+                        Admin
                     </a>
                 <% } else {%>
-                    <a href="/admin">
+                    <a href="/admin" class="button">
                         <div class="adminFalse imgButton"></div>
+                        Admin
                     </a>
                 <% }%>
-                <a href="/logout">
+                <a href="/logout" class="button"> 
                     <div class="logOutButton imgButton"></div>
-                    <button>Log Out</button>
+                    Log Out
                 </a>
                 <% } else { %>
-                    <a href="/signup">
+                    <a href="/signup" class="button">
                         <div class="signUpButton imgButton"></div>
-                        <button>Sign Up</button>
+                        Sign Up
                     </a>
-                    <a href="/login">
+                    <a href="/login" class="button">
                         <div class="logInButton imgButton"></div>
-                        <button>Log In</button>
+                        Log In
                     </a>
                     <% }%>
         </div>

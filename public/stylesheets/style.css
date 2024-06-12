@@ -46,10 +46,53 @@ h3 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 10px;
 }
 
 .homeButton {
   margin-right: auto;
+}
+
+.logInButton {
+  background: url(../images/login.svg) no-repeat center center/cover;
+  content: "";
+}
+
+.logOutButton {
+  background: url(../images/logout.svg) no-repeat center center/cover;
+  content: "";
+}
+
+.signUpButton {
+  background: url(../images/signup.svg) no-repeat center center/cover;
+  content: "";
+}
+
+.adminTrue {
+  background: url(../images/adminTrue.svg) no-repeat center center/cover;
+  content: "";
+}
+
+.adminFalse {
+  background: url(../images/adminFalse.svg) no-repeat center center/cover;
+  content: "";
+}
+
+.imgButton {
+  height: 20px;
+  width: 20px;
+}
+
+.userButton {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.userButton > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .container {
@@ -103,44 +146,15 @@ form button {
   height: 30px;
 }
 
-.logInButton {
-  background: url(../images/login.svg) no-repeat center center/cover;
-  content: "";
+.msgName {
+  display: flex;
+  align-items: center;
 }
 
-.logOutButton {
-  background: url(../images/signout.svg) no-repeat center center/cover;
-  content: "";
-}
-
-.signUpButton {
-  background: url(../images/signup.svg) no-repeat center center/cover;
-  content: "";
-}
-
-.adminTrue {
-  background: url(../images/adminTrue.svg) no-repeat center center/cover;
-  content: "";
-}
-
-.adminFalse {
-  background: url(../images/adminFalse.svg) no-repeat center center/cover;
-  content: "";
-}
-
-.imgButton {
-  height: 30px;
-  width: 30px;
-}
-
-.userButton {
+.button {
+  border: solid black 1px;
+  padding: 8px;
+  border-radius: 5px;
   display: flex;
   gap: 5px;
-  align-items: center;
-}
-
-.userButton > a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }

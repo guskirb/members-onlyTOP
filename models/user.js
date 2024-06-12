@@ -9,4 +9,8 @@ const UserSchema = new Schema({
     admin: { type: Boolean }
 });
 
+UserSchema.virtual('first_last').get(function() {
+    return `${this.first_name} ${this.last_name}`;
+})
+
 module.exports = mongoose.model('User', UserSchema);

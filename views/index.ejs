@@ -13,7 +13,24 @@
   <%- include('./partials/nav.ejs') %>
     <div class="container">
       <div class="msgContainer">
-        <h1>Messages</h1>
+        <% messages.forEach((message)=> { %>
+          <div class="msgBox">
+            <div class="msgName">
+              <% if(message.user.admin) { %>
+                <div class="adminTrue imgButton"></div>
+                <% } %>
+              <h3>
+                <%= message.user.first_last %>:
+              </h3>
+            </div>
+            <p>
+              <%= message.message %>
+            </p>
+            <p>
+              <%= message.date_formatted %>
+            </p>
+          </div>
+          <% }) %>
       </div>
       <% if(locals.currentUser){ %>
         <form method="POST" action="">

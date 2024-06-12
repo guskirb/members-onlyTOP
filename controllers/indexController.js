@@ -4,8 +4,11 @@ const asyncHandler = require('express-async-handler');
 const { body, validationResult } = require('express-validator');
 
 exports.index_get = asyncHandler(async (req, res, next) => {
+    const messages = await Message.find().populate('user').exec();
+    
     res.render('index', {
         title: 'Members Only',
+        messages: messages,
         errors: undefined,
     });
 });
@@ -25,8 +28,10 @@ exports.index_post = [
         });
 
         if (!errors.isEmpty()) {
+            const messages = await Message.find().populate('user').exec();
             res.render('index', {
                 title: 'Members Only',
+                messages: messages,
                 errors: errors.mapped(),
             });
             return;
