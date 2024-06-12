@@ -9,7 +9,7 @@ const MessageSchema = new Schema({
 });
 
 MessageSchema.virtual('date_formatted').get(function () {
-    return DateTime.fromJSDate(this.date).toLocaleString(DateTime.DATETIME_SHORT);
+    return `${DateTime.fromJSDate(this.date).toLocaleString(DateTime.TIME_24_SIMPLE)} ${DateTime.fromJSDate(this.date).toLocaleString(DateTime.DATE_SHORT)}`;
 });
 
 module.exports = mongoose.model('Message', MessageSchema);

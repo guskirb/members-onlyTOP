@@ -19,20 +19,24 @@
               <% if(message.user.admin) { %>
                 <div class="adminTrue imgButton"></div>
                 <% } %>
-              <h3>
-                <%= message.user.first_last %>:
-              </h3>
+                  <h3 class="msgUser">
+                    <%= message.user.first_last %>:
+                  </h3>
             </div>
-            <p>
-              <%= message.message %>
-            </p>
+            <div class="msg">
+              <p>
+                <%= message.message %>
+              </p>
+            </div>
             <p>
               <%= message.date_formatted %>
             </p>
           </div>
           <% }) %>
       </div>
-      <% if(locals.currentUser){ %>
+    </div>
+    <% if(locals.currentUser){ %>
+      <div class="msgForm">
         <form method="POST" action="">
           <label for="message">Message:
             <input type="text" name="message" id="message" <% if(errors){ %>
@@ -46,8 +50,8 @@
           </label>
           <button>Send</button>
         </form>
-        <% } %>
-    </div>
+      </div>
+      <% } %>
 </body>
 
 </html>

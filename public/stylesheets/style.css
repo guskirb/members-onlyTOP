@@ -1,10 +1,15 @@
+/* * {
+  border: 1px solid red;
+} */
+
 body {
   display: flex;
   flex-flow: column;
   align-items: center;
-  height: 100vh;
   margin: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  height: 100vh;
+  box-sizing: border-box;
 }
 
 a {
@@ -36,9 +41,10 @@ h3 {
 }
 
 .navContainer {
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: center;
+  background-color: red;
 }
 
 .navBar {
@@ -98,10 +104,20 @@ h3 {
 .container {
   display: flex;
   flex-flow: column;
-  align-items: center;
   justify-content: center;
-  height: 100vh;
-  width: 60vw;
+  align-items: center;
+  width: 100%;
+  height: inherit;
+  overflow:auto;
+}
+
+.msgContainer{
+  box-sizing: border-box;
+  overflow-y: scroll;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
 }
 
 .coupled {
@@ -146,15 +162,41 @@ form button {
   height: 30px;
 }
 
-.msgName {
-  display: flex;
-  align-items: center;
-}
-
 .button {
   border: solid black 1px;
   padding: 8px;
   border-radius: 5px;
   display: flex;
   gap: 5px;
+}
+
+.msgBox {
+  margin-block: 20px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 3px;
+}
+
+.msgName {
+  display: flex;
+  align-items: center;
+}
+
+.msg {
+  color: white;
+  position: relative;
+  width: fit-content;
+  background-color: #4cbdff;
+  padding: 0.8em 1em;
+  font-size: 1.2em;
+  border-radius: 1rem;
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.3),
+    0 0.0625rem 0.125rem rgba(0, 0, 0, 0.2);
+}
+
+.msgForm {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
