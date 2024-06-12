@@ -15,16 +15,26 @@
             <form action="" method="POST">
                 <h2>Log in</h2>
                 <label for="email">Email
-                    <input name="email" type="text" />
-                    <% if(errors && errors.email){ %>
-                        <span class="danger error"><%= errors.email.msg %></span>
+                    <input name="email" type="text" <% if(errors && errors.email){ %>
+                    class='inputError'
                     <% } %>
+                        />
+                        <% if(errors && errors.email){ %>
+                            <span class="danger error">
+                                <%= errors.email.msg %>
+                            </span>
+                            <% } %>
                 </label>
                 <label for="password">Password
-                    <input name="password" type="password" />
-                    <% if(errors && errors.password){ %>
-                        <span class="danger error"><%= errors.password.msg %></span>
+                    <input name="password" type="password" <% if(errors && errors.password){ %>
+                    class='inputError'
                     <% } %>
+                        />
+                        <% if(errors && errors.password){ %>
+                            <span class="danger error">
+                                <%= errors.password.msg %>
+                            </span>
+                            <% } %>
                 </label>
                 <button>Log In</button>
                 <p>Dont have an account? <a href="/signup">Sign Up</a></p>

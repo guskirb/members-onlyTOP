@@ -16,12 +16,14 @@
             <form action="" method="POST">
                 <h2>Enter Admin Password</h2>
                 <label for="password">Password
-                    <input name="password" type="password" />
-                    <% if(error){ %>
-                        <span class="danger error">
-                            <%= error %>
-                        </span>
-                    <% } %>
+                    <input name="password" type="password" <% if(error){ %>
+                    class='inputError'
+                    <% } %>/>
+                        <% if(error){ %>
+                            <span class="danger error">
+                                <%= error %>
+                            </span>
+                            <% } %>
                 </label>
                 <button>Enter</button>
             </form>

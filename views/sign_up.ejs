@@ -12,40 +12,59 @@
 <body>
     <%- include('./partials/nav.ejs') %>
         <div class="container">
-            
             <form action="" method="POST">
                 <h2>Sign Up</h2>
                 <div class="coupled">
                     <label for="first_name">First Name
-                        <input name="first_name" type="text" />
-                        <% if(errors && errors.first_name){ %>
-                            <span class="danger error"><%= errors.first_name.msg %></span>
-                        <% } %>
+                        <input name="first_name" type="text" <% if(errors && errors.first_name){ %>
+                        class='inputError'
+                        <% } %>/>
+                            <% if(errors && errors.first_name){ %>
+                                <span class="danger error">
+                                    <%= errors.first_name.msg %>
+                                </span>
+                                <% } %>
                     </label>
                     <label for="last_name">Last Name
-                        <input name="last_name" type="text" />
-                        <% if(errors && errors.last_name){ %>
-                            <span class="danger error"><%= errors.last_name.msg %></span>
-                        <% } %>
+                        <input name="last_name" type="text" <% if(errors && errors.last_name){ %>
+                        class='inputError'
+                        <% } %>/>
+                            <% if(errors && errors.last_name){ %>
+                                <span class="danger error">
+                                    <%= errors.last_name.msg %>
+                                </span>
+                                <% } %>
                     </label>
                 </div>
                 <label for="email">Email
-                    <input name="email" type="email" />
-                    <% if(errors && errors.email){ %>
-                        <span class="danger error"><%= errors.email.msg %></span>
-                    <% } %>
+                    <input name="email" type="email" <% if(errors && errors.email){ %>
+                    class='inputError'
+                    <% } %>/>
+                        <% if(errors && errors.email){ %>
+                            <span class="danger error">
+                                <%= errors.email.msg %>
+                            </span>
+                            <% } %>
                 </label>
                 <label for="password">Password
-                    <input name="password" type="password" />
-                    <% if(errors && errors.password){ %>
-                        <span class="danger error"><%= errors.password.msg %></span>
-                    <% } %>
+                    <input name="password" type="password" <% if(errors && errors.password){ %>
+                    class='inputError'
+                    <% } %>/>
+                        <% if(errors && errors.password){ %>
+                            <span class="danger error">
+                                <%= errors.password.msg %>
+                            </span>
+                            <% } %>
                 </label>
                 <label for="confirmPassword">Confirm Password
-                    <input name="confirmPassword" type="password" />
-                    <% if(errors && errors.confirmPassword){ %>
-                        <span class="danger error"><%= errors.confirmPassword.msg %></span>
-                    <% } %>
+                    <input name="confirmPassword" type="password" <% if(errors && errors.confirmPassword){ %>
+                    class='inputError'
+                    <% } %>/>
+                        <% if(errors && errors.confirmPassword){ %>
+                            <span class="danger error">
+                                <%= errors.confirmPassword.msg %>
+                            </span>
+                            <% } %>
                 </label>
                 <button>Sign Up</button>
                 <p>Already have an account? <a href="/login">Log In</a></p>

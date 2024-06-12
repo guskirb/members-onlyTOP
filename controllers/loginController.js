@@ -38,7 +38,7 @@ exports.validateLogin = [
         }),
     asyncHandler(async (req, res, next) => {
         const errors = validationResult(req);
-        console.log(errors)
+        
         if (!errors.isEmpty()) {
             res.render('log_in', {
                 title: 'Log In',
