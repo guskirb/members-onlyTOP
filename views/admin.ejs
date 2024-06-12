@@ -12,16 +12,19 @@
 <body>
     <%- include('./partials/nav.ejs') %>
         <div class="container">
-            <h1>Enter the password</h1>
+
             <form action="" method="POST">
+                <h2>Enter Admin Password</h2>
                 <label for="password">Password
                     <input name="password" type="password" />
+                    <% if(error){ %>
+                        <span class="danger error">
+                            <%= error %>
+                        </span>
+                    <% } %>
                 </label>
                 <button>Enter</button>
             </form>
-            <% if(error){ %>
-                    <h3> <%= error %> </h3>
-              <% } %>
         </div>
 </body>
 

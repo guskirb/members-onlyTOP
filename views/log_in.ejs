@@ -12,20 +12,23 @@
 <body>
     <%- include('./partials/nav.ejs') %>
         <div class="container">
-            <h1>Log in</h1>
             <form action="" method="POST">
+                <h2>Log in</h2>
                 <label for="email">Email
                     <input name="email" type="text" />
+                    <% if(errors && errors.email){ %>
+                        <span class="danger error"><%= errors.email.msg %></span>
+                    <% } %>
                 </label>
                 <label for="password">Password
                     <input name="password" type="password" />
+                    <% if(errors && errors.password){ %>
+                        <span class="danger error"><%= errors.password.msg %></span>
+                    <% } %>
                 </label>
                 <button>Log In</button>
                 <p>Dont have an account? <a href="/signup">Sign Up</a></p>
             </form>
-            <% if(messages.error){ %>
-                    <h3> <%= messages.error %> </h3>
-              <% } %>
         </div>
 </body>
 

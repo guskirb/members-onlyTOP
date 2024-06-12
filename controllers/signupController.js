@@ -41,7 +41,7 @@ exports.signup_post = [
         if (!errors.isEmpty()) {
             res.render('sign_up', {
                 title: 'Sign Up',
-                errors: errors.array(),
+                errors: errors.mapped(),
             });
             return;
         }
