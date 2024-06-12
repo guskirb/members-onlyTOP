@@ -14,7 +14,8 @@ exports.signup_post = [
     body('first_name')
         .trim()
         .isLength({ min: 1 })
-        .withMessage('First name is required'),
+        .withMessage('First name is required')
+        .escape(),
     body('last_name')
         .trim()
         .isLength({ min: 1 })
@@ -28,16 +29,19 @@ exports.signup_post = [
             if (user) {
                 throw new Error('Email already in use');
             }
-        }),
+        })
+        .escape(),
     body('password')
         .isLength({ min: 5 })
-        .withMessage('Password must contain at least 5 characters'),
+        .withMessage('Password must contain at least 5 characters')
+        .escape(),
     body('confirmPassword').custom((value, { req }) => {
         return value === req.body.password;
-    }).withMessage('Passwords do not match'),
+    }).withMessage('Passwords do not match')
+        .escape(),
     asyncHandler(async (req, res, next) => {
         const errors = validationResult(req);
-        
+
         if (!errors.isEmpty()) {
             res.render('sign_up', {
                 title: 'Sign Up',

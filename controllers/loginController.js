@@ -1,5 +1,4 @@
 const bcrypt = require('bcrypt');
-const passport = require('passport');
 const User = require('../models/user');
 const asyncHandler = require('express-async-handler');
 const { body, validationResult } = require('express-validator');
@@ -21,7 +20,8 @@ exports.validateLogin = [
             if (!user) {
                 return new Error('Email not found');
             }
-        }),
+        })
+        .escape(),
     body('password', 'Password incorrect')
         .isLength({ min: 5 })
         .withMessage('Password must contain at least 5 characters')
@@ -35,7 +35,8 @@ exports.validateLogin = [
                     throw new Error('Password incorrect');
                 }
             }
-        }),
+        })
+        .escape(),
     asyncHandler(async (req, res, next) => {
         const errors = validationResult(req);
         
