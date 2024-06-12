@@ -5,17 +5,16 @@ if (process.env.NODE_ENV !== 'production') {
 const express = require('express');
 const router = express.Router();
 const passport = require('passport');
+const indexController = require('../controllers/indexController');
 const signupController = require('../controllers/signupController');
 const loginController = require('../controllers/loginController');
 const authMiddleware = require('../authMiddleware');
 const User = require('../models/user');
 
 /* GET home page. */
-router.get('/', (req, res, next) => {
-  res.render('index', {
-    title: 'Members Only',
-  });
-});
+router.get('/', indexController.index_get);
+
+router.post('/', indexController.index_post);
 
 router.get('/signup', authMiddleware.isLoggedIn, signupController.signup_get);
 

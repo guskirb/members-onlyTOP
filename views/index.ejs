@@ -12,12 +12,24 @@
 <body>
   <%- include('./partials/nav.ejs') %>
     <div class="container">
-      <h1>
-        <%= title %>
-      </h1>
       <div class="msgContainer">
-        
+        <h1>Messages</h1>
       </div>
+      <% if(locals.currentUser){ %>
+        <form method="POST" action="">
+          <label for="message">Message:
+            <input type="text" name="message" id="message" <% if(errors){ %>
+            class='inputError'
+            <% } %>/>
+              <% if(errors && errors.message){ %>
+                <span class="danger error">
+                  <%= errors.message.msg %>
+                </span>
+                <% } %>
+          </label>
+          <button>Send</button>
+        </form>
+        <% } %>
     </div>
 </body>
 
