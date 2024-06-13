@@ -1,7 +1,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
-<svg width="800px" height="800px" viewBox="0 0 24 24" id="magicoon-Regular" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+<svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g id="SVGRepo_bgCarrier" stroke-width="0"/>
 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-<g id="SVGRepo_iconCarrier"> <defs> <style>.cls-1{fill:#000000;}</style> </defs> <title>log-in</title> <g id="log-in-Regular"> <path id="log-in-Regular-2" data-name="log-in-Regular" class="cls-1" d="M20.75,7V17A4.756,4.756,0,0,1,16,21.75H12a.75.75,0,0,1,0-1.5h4A3.254,3.254,0,0,0,19.25,17V7A3.254,3.254,0,0,0,16,3.75H12a.75.75,0,0,1,0-1.5h4A4.756,4.756,0,0,1,20.75,7Zm-6.22,4.47-4-4A.75.75,0,0,0,9.47,8.531l2.719,2.719H4a.75.75,0,0,0,0,1.5h8.189L9.47,15.47a.75.75,0,0,0,1.06,1.061l4-4A.75.75,0,0,0,14.53,11.47Z"/> </g> </g>
+<g id="SVGRepo_iconCarrier"> <path d="M2.00098 11.999L16.001 11.999M16.001 11.999L12.501 8.99902M16.001 11.999L12.501 14.999" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/> <path opacity="0.5" d="M9.00195 7C9.01406 4.82497 9.11051 3.64706 9.87889 2.87868C10.7576 2 12.1718 2 15.0002 2L16.0002 2C18.8286 2 20.2429 2 21.1215 2.87868C22.0002 3.75736 22.0002 5.17157 22.0002 8L22.0002 16C22.0002 18.8284 22.0002 20.2426 21.1215 21.1213C20.2429 22 18.8286 22 16.0002 22H15.0002C12.1718 22 10.7576 22 9.87889 21.1213C9.11051 20.3529 9.01406 19.175 9.00195 17" stroke="#000000" stroke-width="1.5" stroke-linecap="round"/> </g>
 </svg>

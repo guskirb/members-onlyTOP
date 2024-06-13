@@ -25,9 +25,15 @@
                   <% if(message.user.admin) { %>
                     <div class="adminTrue imgButton"></div>
                     <% } %>
+                    <% if(locals.currentUser !==undefined) { %>
                       <h3 class="msgUser">
                         <%= message.user.first_last %>:
                       </h3>
+                      <% } else { %>
+                        <h3 class="msgUser">
+                          ?????:
+                        </h3>
+                      <% }%>
                 </div>
                 <div <% if(locals.currentUser !==undefined &&
                   message.user._id.toString()===locals.currentUser._id.toString()){ %>
@@ -41,9 +47,15 @@
                       </p>
                 </div>
                 <div class="msgLower">
-                  <p>
-                    <%= message.date_formatted %>
-                  </p>
+                  <% if(locals.currentUser !==undefined) { %>
+                    <p>
+                      <%= message.date_formatted %>
+                    </p>
+                    <% } else { %>
+                      <p>
+                        ?????
+                      </p>
+                    <% }%>
                   <% if(locals.currentUser !==undefined && locals.currentUser.admin) { %>
                     <form action="/delete" method="post">
                       <input type="text" name="id" value="<%= message._id.toString() %>" hidden>

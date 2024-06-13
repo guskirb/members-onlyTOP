@@ -10,6 +10,7 @@ body {
 
 a {
   color: #00b7ff;
+  text-decoration: none;
 }
 
 p {
@@ -40,8 +41,9 @@ h3 {
   width: 100%;
   display: flex;
   justify-content: center;
-  border: 1px solid black;
   box-sizing: border-box;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  z-index: 1;
 }
 
 .navBar {
@@ -50,6 +52,11 @@ h3 {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
+}
+
+.imgButton {
+  height: 25px;
+  width: 25px;
 }
 
 .homeButton {
@@ -76,6 +83,8 @@ h3 {
   content: "";
   border: none;
   cursor: pointer;
+  height: 20px;
+  width: 20px;
 }
 
 .adminTrue {
@@ -86,11 +95,6 @@ h3 {
 .adminFalse {
   background: url(../images/adminFalse.svg) no-repeat center center/cover;
   content: "";
-}
-
-.imgButton {
-  height: 20px;
-  width: 20px;
 }
 
 .userButton {
@@ -112,10 +116,11 @@ h3 {
   align-items: center;
   width: 100%;
   height: inherit;
-  overflow:auto;
+  overflow: auto;
+  background-color: #f5f5f5;
 }
 
-.msgContainer{
+.msgContainer {
   box-sizing: border-box;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -123,7 +128,7 @@ h3 {
   display: flex;
   flex-flow: column;
   margin-bottom: auto;
-  padding-inline: 20%;
+  padding-inline: 530px;
 }
 
 .coupled {
@@ -152,9 +157,10 @@ input {
   align-items: center;
   gap: 5px;
   width: 400px;
-  border: solid 1px black;
-  padding: 20px;
+  padding: 30px;
   border-radius: 5px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 }
 
 .form h2 {
@@ -186,6 +192,7 @@ input {
 .msgName {
   display: flex;
   align-items: center;
+  gap: 2px;
 }
 
 .msg {
@@ -208,8 +215,12 @@ input {
   width: 100%;
   display: flex;
   justify-content: center;
-  border: 1px solid black;
   box-sizing: border-box;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px -1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+.msgForm form {
+  box-shadow: none;
 }
 
 .flexRight {
@@ -227,6 +238,6 @@ input {
 }
 
 .msgGrey {
-  background-color: #f0f0f0;
+  background-color: #e9e9e9;
   color: black;
 }
