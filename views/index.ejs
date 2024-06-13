@@ -59,7 +59,7 @@
                   <% if(locals.currentUser !==undefined && locals.currentUser.admin) { %>
                     <form action="/delete" method="post">
                       <input type="text" name="id" value="<%= message._id.toString() %>" hidden>
-                      <button class="deleteButton imgButton" type="submit"></button>
+                      <button class="deleteButton" type="submit"></button>
                     </form>
                     <% } %>
                 </div>

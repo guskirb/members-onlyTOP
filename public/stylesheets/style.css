@@ -1,5 +1,8 @@
 :root {
   --accent-color: #4cbdff;
+  --background-color: #f7f7f7;
+  --box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 }
 
 body {
@@ -18,7 +21,7 @@ a {
 }
 
 b {
- color: var(--accent-color);
+  color: var(--accent-color);
 }
 
 p {
@@ -50,12 +53,12 @@ h3 {
   display: flex;
   justify-content: center;
   box-sizing: border-box;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  box-shadow: var(--box-shadow);
   z-index: 1;
 }
 
 .navBar {
-  width: 1200px;
+  width: 60%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -117,6 +120,18 @@ h3 {
   justify-content: center;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logoImg {
+  background: url(../images/key.svg) no-repeat center center/cover;
+  content: "";
+  height: 30px;
+  width: 30px;
+}
+
 .container {
   display: flex;
   flex-flow: column;
@@ -125,7 +140,7 @@ h3 {
   width: 100%;
   height: inherit;
   overflow: auto;
-  background-color: #f7f7f7;
+  background-color: var(--background-color);
 }
 
 .msgContainer {
@@ -136,7 +151,26 @@ h3 {
   display: flex;
   flex-flow: column;
   margin-bottom: auto;
-  padding-inline: 530px;
+  padding-inline: 21%;
+}
+
+.msgContainer::-webkit-scrollbar {
+  width: 1.2em;
+}
+
+.msgContainer::-webkit-scrollbar-track {
+  background: var(--background-color);
+  margin-block: 0.5em;
+}
+
+.msgContainer::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 100vw;
+  border: .25em solid var(--background-color);
+}
+
+.msgContainer::-webkit-scrollbar-thumb:hover {
+  background: #31acf3;
 }
 
 .coupled {
@@ -168,7 +202,8 @@ input {
   padding: 30px;
   border-radius: 5px;
   background-color: white;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 }
 
 .form h2 {
@@ -187,7 +222,11 @@ input {
 }
 
 form button:hover {
-  background-color:#31acf3;
+  background-color: #31acf3;
+}
+
+.deleteButton:hover {
+  background-color: var(--background-color);
 }
 
 input {
@@ -229,6 +268,7 @@ input:focus {
   border-radius: 1rem;
   max-width: 30vw;
   overflow-wrap: anywhere;
+  box-shadow: var(--box-shadow);
 }
 
 .msgLower {
@@ -241,7 +281,8 @@ input:focus {
   display: flex;
   justify-content: center;
   box-sizing: border-box;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px -1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px -1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 }
 
 .msgForm form {
