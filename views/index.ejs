@@ -14,30 +14,50 @@
     <div class="container">
       <div class="msgContainer">
         <% messages.forEach((message)=> { %>
-          <div class="msgBox">
-            <div class="msgName">
-              <% if(message.user.admin) { %>
-                <div class="adminTrue imgButton"></div>
-                <% } %>
-                  <h3 class="msgUser">
-                    <%= message.user.first_last %>:
-                  </h3>
-            </div>
-            <div class="msg">
-              <p>
-                <%= message.message %>
-              </p>
-            </div>
-            <p>
-              <%= message.date_formatted %>
-            </p>
+          <div <% if(locals.currentUser !==undefined &&
+            message.user._id.toString()===locals.currentUser._id.toString()){ %>
+            class='msgBox flexRight'
+            <% }else { %>
+              class='msgBox flexLeft'
+              <% } %>
+                />
+                <div class="msgName">
+                  <% if(message.user.admin) { %>
+                    <div class="adminTrue imgButton"></div>
+                    <% } %>
+                      <h3 class="msgUser">
+                        <%= message.user.first_last %>:
+                      </h3>
+                </div>
+                <div <% if(locals.currentUser !==undefined &&
+                  message.user._id.toString()===locals.currentUser._id.toString()){ %>
+                  class='msg msgGrey'
+                  <% }else { %>
+                    class='msg msgBlue'
+                    <% } %>
+                      />
+                      <p>
+                        <%= message.message %>
+                      </p>
+                </div>
+                <div class="msgLower">
+                  <p>
+                    <%= message.date_formatted %>
+                  </p>
+                  <% if(locals.currentUser !==undefined && locals.currentUser.admin) { %>
+                    <form action="/delete" method="post">
+                      <input type="text" name="id" value="<%= message._id.toString() %>" hidden>
+                      <button class="deleteButton imgButton" type="submit"></button>
+                    </form>
+                    <% } %>
+                </div>
           </div>
           <% }) %>
       </div>
     </div>
     <% if(locals.currentUser){ %>
       <div class="msgForm">
-        <form method="POST" action="">
+        <form method="POST" action="" class="form">
           <label for="message">Message:
             <input type="text" name="message" id="message" <% if(errors){ %>
             class='inputError'

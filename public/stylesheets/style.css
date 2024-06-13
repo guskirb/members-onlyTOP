@@ -1,7 +1,3 @@
-/* * {
-  border: 1px solid red;
-} */
-
 body {
   display: flex;
   flex-flow: column;
@@ -44,7 +40,8 @@ h3 {
   width: 100%;
   display: flex;
   justify-content: center;
-  background-color: red;
+  border: 1px solid black;
+  box-sizing: border-box;
 }
 
 .navBar {
@@ -72,6 +69,13 @@ h3 {
 .signUpButton {
   background: url(../images/signup.svg) no-repeat center center/cover;
   content: "";
+}
+
+.deleteButton {
+  background: url(../images/delete.svg) no-repeat center center/cover;
+  content: "";
+  border: none;
+  cursor: pointer;
 }
 
 .adminTrue {
@@ -114,10 +118,12 @@ h3 {
 .msgContainer{
   box-sizing: border-box;
   overflow-y: scroll;
+  overflow-x: hidden;
   width: 100%;
   display: flex;
   flex-flow: column;
-  align-items: center;
+  margin-bottom: auto;
+  padding-inline: 20%;
 }
 
 .coupled {
@@ -140,7 +146,7 @@ input {
   padding-inline: 5px;
 }
 
-form {
+.form {
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -151,12 +157,12 @@ form {
   border-radius: 5px;
 }
 
-form h2 {
+.form h2 {
   align-self: flex-start;
   margin-bottom: 10px;
 }
 
-form button {
+.form button {
   margin-top: 10px;
   width: 100%;
   height: 30px;
@@ -171,10 +177,9 @@ form button {
 }
 
 .msgBox {
-  margin-block: 20px;
+  margin-block: 10px;
   display: flex;
   flex-flow: column;
-  align-items: center;
   gap: 3px;
 }
 
@@ -187,16 +192,41 @@ form button {
   color: white;
   position: relative;
   width: fit-content;
-  background-color: #4cbdff;
   padding: 0.8em 1em;
   font-size: 1.2em;
   border-radius: 1rem;
-  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.3),
-    0 0.0625rem 0.125rem rgba(0, 0, 0, 0.2);
+  max-width: 30vw;
+  overflow-wrap: anywhere;
+}
+
+.msgLower {
+  display: flex;
+  align-items: center;
 }
 
 .msgForm {
   width: 100%;
   display: flex;
   justify-content: center;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+
+.flexRight {
+  align-self: flex-end;
+  align-items: flex-end;
+}
+
+.flexLeft {
+  align-self: flex-start;
+  align-items: flex-start;
+}
+
+.msgBlue {
+  background-color: #4cbdff;
+}
+
+.msgGrey {
+  background-color: #f0f0f0;
+  color: black;
 }

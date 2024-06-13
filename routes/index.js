@@ -5,11 +5,13 @@ if (process.env.NODE_ENV !== 'production') {
 const express = require('express');
 const router = express.Router();
 const passport = require('passport');
+const asyncHandler = require('express-async-handler');
 const indexController = require('../controllers/indexController');
 const signupController = require('../controllers/signupController');
 const loginController = require('../controllers/loginController');
 const authMiddleware = require('../authMiddleware');
 const User = require('../models/user');
+const Message = require('../models/message');
 
 /* GET home page. */
 router.get('/', indexController.index_get);
@@ -55,6 +57,11 @@ router.post('/admin', async (req, res, next) => {
       error: 'Incorrect password',
     });
   }
-})
+});
+
+router.post('/delete', authMiddleware.isAdmin, asyncHandler(async (req, res, next) => {
+  await Message.findByIdAndDelete(req.body.id);
+  res.redirect('/');
+}));
 
 module.exports = router;
